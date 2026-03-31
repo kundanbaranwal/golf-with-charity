@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:init": "mysql -u root -p -e \"source sql/schema.sql\"",
+    "db:migrate:isadmin": "mysql -u root -p -e \"source sql/migrate_is_admin.sql\"",
+    "db:migrate:user-blocking": "mysql -u root -p -e \"source sql/migrate_user_blocking.sql\"",
+    "db:migrate:charity-limit": "mysql -u root -p -e \"source sql/migrate_charity_percentage_limit.sql\"",
+    "db:seed": "mysql -u root -p -e \"source sql/seed.sql\"",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.20.0",
+    "razorpay": "^2.9.6",
+    "stripe": "^21.0.1"
+  }
+}

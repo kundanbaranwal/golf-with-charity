@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 40 20% 95%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 160 60% 45%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 43 96% 56%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 40% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 43 96% 56%;
+
+    /* Custom tokens */
+    --charity: 160 60% 45%;
+    --charity-foreground: 222 47% 6%;
+    --gold: 43 96% 56%;
+    --gold-glow: 38 100% 65%;
+    --emerald: 160 60% 45%;
+    --emerald-glow: 155 70% 55%;
+    --glass: 222 40% 12%;
+    --glass-border: 222 30% 22%;
+
+    --gradient-gold: linear-gradient(135deg, hsl(43, 96%, 56%), hsl(38, 100%, 65%));
+    --gradient-emerald: linear-gradient(135deg, hsl(160, 60%, 45%), hsl(155, 70%, 55%));
+    --gradient-dark: linear-gradient(180deg, hsl(222, 47%, 6%), hsl(222, 40%, 10%));
+    --shadow-gold: 0 10px 40px -10px hsl(43 96% 56% / 0.3);
+    --shadow-emerald: 0 10px 40px -10px hsl(160 60% 45% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-glass/60 backdrop-blur-xl border border-glass-border rounded-xl;
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-emerald {
+    background: var(--gradient-emerald);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-emerald {
+    background: var(--gradient-emerald);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-emerald {
+    box-shadow: var(--shadow-emerald);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(43 96% 56% / 0.15), 0 0 60px hsl(43 96% 56% / 0.05);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 30px hsl(160 60% 45% / 0.15), 0 0 60px hsl(160 60% 45% / 0.05);
+  }
+}
