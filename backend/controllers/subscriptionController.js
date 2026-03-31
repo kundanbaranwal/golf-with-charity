@@ -28,7 +28,7 @@ exports.createSubscription = async (req, res) => {
       const razorpay = getRazorpayClient();
 
       const order = await razorpay.orders.create({
-        amount: normalizedPlan === "yearly" ? 8999 : 999,
+        amount: normalizedPlan === "yearly" ? 8999 : 100,
         currency: process.env.CURRENCY || "INR",
         receipt: `sub_${req.user.id}_${Date.now()}`,
       });
@@ -44,7 +44,7 @@ exports.createSubscription = async (req, res) => {
     return res.status(201).json({
       message: "Subscription intent created",
       subscriptionId: result.insertId,
-      amount: normalizedPlan === "yearly" ? 8999 : 999,
+      amount: normalizedPlan === "yearly" ? 8999 : 100,
       currency: process.env.CURRENCY || "INR",
       orderId: providerOrderId,
       paymentGateway,
